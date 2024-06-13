@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Country</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,600,800" rel="stylesheet" />
+  <link rel="stylesheet" href="output.css" />
+  <link rel="stylesheet" href="extra.css" />
+</head>
+<body class="bg-slate-700 text-white">
+  <div class="mx-auto p-[24px] bg-slate-600 shadow flex justify-between">
+    <h1 class="text-[16px] my-auto md:text-[20px]"><b>Where in the world?</b></h1>
+    <a href="index.html"><img class="my-auto hover:scale-125 duration-75 ease-in-out transition-all m-0 p-0 h-[100px] w-[100px]" src="/worlducate.png" /></a>
+    <button class="bg-slate-600" onClick="toggleDarkMode()" id="darkMode">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="inline size-5">
+        <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd"/>
+      </svg>
+      <p id="modeText" class="inline">Dark Mode</p>
+    </button>
+  </div>
+  <div>
+    <main class="m-[24px]">
+      <button class="rounded-[4px] py-[6px] px-[24px] bg-slate-600 shadow">
+        <a onclick="goBack()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 inline">
+            <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"/>
+          </svg>
+          <p class="inline">Back</p>
+        </a>
+      </button>
+      <div class="country-details mt-[32px] flex-row md:flex items-center gap-[16px] md:gap-[64px]">
+        <!-- <img src="https://flagcdn.com/af.svg" class="w-[500px]" alt="flag">
+        <div class="details-text-container items-start">
+          <h1 class="text-[24px] my-[16px]" id="country-name"><b>Country</b></h1>
+          <div class="details-text flex-wrap md:flex md:max-h-[180px] gap-y-[12px] gap-x-[64px] md:flex-col">
+            <P class="m-0"><b>Native Name:</b></P>
+            <P class="m-0"><b>Population:</b></P>
+            <P class="m-0"><b>Region:</b></P>
+            <P class="m-0"><b>Sub Region:</b></P>
+            <P class="m-0"><b>Capital:</b></P>
+            <P class="m-0"><b>Top Level Domain:</b></P>
+            <P class="m-0"><b>Currencies:</b></P>
+            <P class="m-0"><b>Languages:</b></P>
+          </div>
+          <div class="border-countries mt-[48px]">
+            <P class="m-0"><b>Border Countries: </b>&nbsp; <a class="" href="#">France </a><a class="" href="#">Germany </a><a class="" href="#">Netherlands</a></P>
+          </div>
+        </div> -->
+      </div>
+      <div class="bg-white hidden">
+        <p class="hover:bg-white bg-[#F0F0F0] px-[16px]"></p>
+      </div>
+    </main>
+  </div>
+  <script src="/country.js" defer></script>
+  <script src="/js/darkmode.js"></script>
+</body>
+</html>

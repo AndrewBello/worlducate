@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.country-card {
+  @apply inline-block transition-all ease-in-out duration-[0.2s]   hover:scale-105 hover:shadow-lg hover:cursor-pointer pb-[24px] rounded-[8px] shadow w-[250px] overflow-hidden
+}
+.country-details {
+  @apply mt-[32px] flex-row  md:flex items-center gap-[16px] md:gap-[64px]
+}
+
+.border-countries a {
+  @apply mx-[4px] rounded-[4px] py-[4px] px-[16px] shadow text-[14px]
+}
