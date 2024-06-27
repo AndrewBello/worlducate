@@ -1,16 +1,16 @@
 function toggleDarkMode() {
-  // Toggle body classes for background and text color
+  //  body classes for background and text color
   document.body.classList.toggle("bg-slate-700");
   document.body.classList.toggle("text-white");
 
-  // Toggle input background color
+  //  input background color
   const inputs = document.querySelectorAll("input");
   inputs.forEach((input) => {
     input.classList.toggle("bg-slate-600");
     input.classList.toggle("bg-[#F0F0F0]");
   });
 
-  // Toggle button background color
+  // button background color
   const buttons = document.querySelectorAll("button");
   buttons.forEach((button) => {
     if (button.classList.contains("bg-slate-600")) {
@@ -20,7 +20,7 @@ function toggleDarkMode() {
       button.classList.toggle("bg-slate-600");
       button.classList.toggle("bg-[#F0F0F0]");
     }
-    // Check if button originally has hover:bg-slate-600
+    // 
     const hasOriginalHoverSlate700 =
       button.classList.contains("hover:bg-slate-700");
     if (hasOriginalHoverSlate700) {
@@ -32,7 +32,7 @@ function toggleDarkMode() {
     }
   });
 
-  // Toggle div background color
+  // div background color
   const divs = document.querySelectorAll("div");
   divs.forEach((div) => {
     if (div.classList.contains("bg-slate-600")) {
@@ -52,13 +52,13 @@ function toggleDarkMode() {
     
   });
 
-  // Toggle dropdownMenu background color
+  //  dropdownMenu background color
   // const dropdownMenu = document.getElementById("dropdownMenu");
   // // dropdownMenu.classList.toggle("bg-slate-600");
   // dropdownMenu.classList.toggle("bg-[#F0F0F0]");
   // dropdownMenu.classList.toggle("bg-slate-700");
 
-  // Toggle mode text
+  // mode text
   const modeText = document.getElementById("modeText");
   modeText.textContent =
     modeText.textContent === "Dark Mode" ? "Light Mode" : "Dark Mode";

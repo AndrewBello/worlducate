@@ -78,7 +78,7 @@ fetch("/data.json")
       </div>
     `;
 
-    detailTextContainer.innerHTML = ""; // Clear previous results
+    detailTextContainer.innerHTML = ""; 
     detailTextContainer.append(countryDetails);
   })
   .catch((error) => {

@@ -10,23 +10,37 @@
 </head>
 <body class="items-center bg-slate-700 text-white">
   <div class="mx-auto p-[24px] bg-slate-600 shadow flex justify-between">
-    <h1 class="text-[16px] my-auto md:text-[20px]"><b>Where in the world?</b></h1>
-    <a href="index.html"><img class="my-auto hover:scale-125 duration-75 ease-in-out transition-all m-0 p-0 h-[100px] w-[100px]" src="/worlducate.png" /></a>
+    <h1 class="scale-75 md:scale-100 text-[16px] my-auto hidden md:inline md:text-[20px]"><b>Where in the world?</b></h1>
+    <a href="index.html"><img class="scale-75 md:scale-100 my-auto hover:scale-125 duration-75 ease-in-out transition-all m-0 p-0 h-[100px] w-[100px]" src="/worlducate.png" /></a>
     <button class="bg-slate-600" onClick="toggleDarkMode()" id="darkMode">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="inline size-5">
         <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd"/>
       </svg>
-      <p id="modeText" class="inline">Dark Mode</p>
+      <p id="modeText" class="scale-75 md:scale-100 inline">Dark Mode</p>
     </button>
   </div>
   <div class="p-3 flex justify-between">
-    <input id="searchBox" class="rounded pl-2 bg-slate-600" type="search" placeholder="Search for a country..." />
-    <button id="dropdownButton" class="rounded p-2 bg-slate-600">
-      <p class="inline pr-3">Filter by Region</p>
+    <input id="searchBox" class="rounded pl-2 scale-100 content-center md:scale-100 bg-slate-600" type="search" placeholder="Search for a country..." />
+    <div>
+      <button id="dropdownButtonmobile" class="inline md:hidden rounded p-2 bg-slate-600">
+      <p class="pr-3 inline">Filter</p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-3 inline">
         <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd"/>
       </svg>
     </button>
+    <button id="dropdownButton" class="hidden md:inline rounded p-2 bg-slate-600">
+      <p class="pr-3 inline">Filter by Region</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-3 inline">
+        <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd"/>
+      </svg>
+    </button>
+    <button id="dropDownLetter" class="hidden md:inline rounded p-2 bg-slate-600">
+      <p class=" inline pr-3">Filter by First Letter</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-3 inline">
+        <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd"/>
+      </svg>
+    </button>
+    </div>
   </div>
   <div id="dropdownMenu" class="hidden absolute right-0 bg-slate-600 rounded-md mt-1 w-48 z-10">
     <button class="block w-full text-left px-4 py-2 hover:bg-slate-700">Africa</button>
@@ -34,6 +48,19 @@
     <button class="block w-full text-left px-4 py-2 hover:bg-slate-700">Asia</button>
     <button class="block w-full text-left px-4 py-2 hover:bg-slate-700">Europe</button>
     <button class="block w-full text-left px-4 py-2 hover:bg-slate-700">Oceania</button>
+  </div>
+   <div id="dropdownMenuLetter" class="hidden absolute right-2 bg-slate-600 rounded-md mt-1 w-48 z-10">
+      <button class="block w-full text-left px-4 py-2 hover:bg-slate-700" onclick="filterByLetter('A-L')">A-L</button>
+      <button class="block w-full text-left px-4 py-2 hover:bg-slate-700" onclick="filterByLetter('M-Z')">M-Z</button>
+    </div>
+    <div id="dropdownMenu2" class="hidden  absolute right-0 bg-slate-600 rounded-md mt-1 w-48 z-10">
+    <button class="block w-full text-left px-4 py-2 hover:bg-slate-700">Africa</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-slate-700">Americas</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-slate-700">Asia</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-slate-700">Europe</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-slate-700">Oceania</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-slate-700" onclick="filterByLetter('A-L')">A-L</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-slate-700" onclick="filterByLetter('M-Z')">M-Z</button>
   </div>
   <main class="p-[24px]">
     <div href="#" class="bg-inherit p-2 mt-[16px] countries-container justify-center md:justify-between flex-wrap flex gap-[32px] mx-auto">
